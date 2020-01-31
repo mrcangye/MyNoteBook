@@ -82,5 +82,21 @@ int main() {
  for (int i = 0; i < b.size(); i++) {
  b[i] = 15;
  }
+ vector<int> c(20, 2); // 定义的时候指定vector的⼤⼩并把所有的元素赋⼀个指定
+的值
+ for (int i = 0; i < c.size(); i++) {
+ cout << c[i] << " ";
+ }
+ cout << endl;
+ for (auto it = c.begin(); it != c.end(); it++) { // 使⽤迭代器的⽅式访
+问vector
+ cout << *it << " ";
+ } 
+ return 0;
+}
 ```
+
+#### 8.set集合
+
+set的集合内容是各不相同的，set内的元素按小到大排序
 
