@@ -321,6 +321,46 @@ for(auto it = s.begin(); it != s.end(); it++) {
 }
 ```
 
-#### 17.to_string
+#### 17. c_str()
 
-#### 18.stoi, stod
+将 string 格式的串转化为 C 语言中的数组
+
+例如，输入：
+
+```cpp
+// strings and c-strings
+#include <iostream>
+#include <cstring>
+#include <string>
+
+int main ()
+{
+  std::string str ("Please split this sentence into tokens");
+
+  char * cstr = new char [str.length()+1];
+  std::strcpy (cstr, str.c_str());
+
+  // cstr now contains a c-string copy of str
+
+  char * p = std::strtok (cstr," ");
+  while (p!=0)
+  {
+    std::cout << p << '\n';
+    p = std::strtok(NULL," ");
+  }
+
+  delete[] cstr;
+  return 0;
+}
+```
+
+```out
+//输出为：
+Please
+split
+this
+sentence
+into
+tokens
+```
+
